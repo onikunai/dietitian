@@ -33,46 +33,46 @@ app.get('/', function(req, res, next){
 //       }
 //   }
 // });
-app.post('/webhook', function(req, res, next){
-  res.status(200).end();
-  for (var event of req.body.events){
-      if (event.type == 'message' && event.message.text == 'ハロー'){
-          var headers = {
-              'Content-Type': 'application/json',
-              'Authorization': 'Bearer ' + LINE_CHANNEL_ACCESS_TOKEN
-          }
-          var body = {
-              replyToken: event.replyToken,
-              messages: [{
-                  type: 'text',
-                  text: 'こんにちはー'
-              }]
-          }
-          var url = 'https://api.line.me/v2/bot/message/reply';
-          request({
-              url: url,
-              method: 'POST',
-              headers: headers,
-              body: body,
-              json: true
-          });
-      }
-  }
-});
-
 // app.post('/webhook', function(req, res, next){
 //   res.status(200).end();
 //   for (var event of req.body.events){
-//       if (event.type == 'message' && event.message.text){
-//            // Mecabクラウドサービスでメッセージを解析
-//           mecab.parse(event.message.text)
-//           .then(
-//               function(response){
-//                     // 解析結果を出力
-//                   console.log(response);
-//               }
-//           );
-
+//       if (event.type == 'message' && event.message.text == 'ハロー'){
+//           var headers = {
+//               'Content-Type': 'application/json',
+//               'Authorization': 'Bearer ' + LINE_CHANNEL_ACCESS_TOKEN
+//           }
+//           var body = {
+//               replyToken: event.replyToken,
+//               messages: [{
+//                   type: 'text',
+//                   text: 'こんにちはー'
+//               }]
+//           }
+//           var url = 'https://api.line.me/v2/bot/message/reply';
+//           request({
+//               url: url,
+//               method: 'POST',
+//               headers: headers,
+//               body: body,
+//               json: true
+//           });
 //       }
 //   }
 // });
+
+app.post('/webhook', function(req, res, next){
+  res.status(200).end();
+  for (var event of req.body.events){
+      if (event.type == 'message' && event.message.text){
+           // Mecabクラウドサービスでメッセージを解析
+          mecab.parse(event.message.text)
+          .then(
+              function(response){
+                    // 解析結果を出力
+                  console.log(response);
+              }
+          );
+
+      }
+  }
+});
