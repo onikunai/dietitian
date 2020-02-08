@@ -9,7 +9,7 @@ const bot_express = require("bot-express");
 /** 
  * Middleware Configuration
  */
-server.listen(process.env.PORT || 5000, () => {
+server.listen(process.env.PORT || 3000, () => {
     console.log("server is running...");
 });
 
