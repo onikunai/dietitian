@@ -1,17 +1,24 @@
 {
-  "name": "dietitian",
+  "name": "have-a-great-time",
   "version": "1.0.0",
-  "description": "dietitian bot for LINE",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Shinya Okubo",
-  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onikunai/dietitian.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/onikunai/dietitian/issues"
+  },
+  "homepage": "https://github.com/onikunai/dietitian#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "mecabaas-client": "^1.0.3",
-    "request": "^2.88.0"
+    "@line/bot-sdk": "^6.8.4",
+    "express": "^4.17.1"
   }
 }
